@@ -52,7 +52,7 @@ export class Ui extends Component {
     var dataURL = canvas.toDataURL();
     
     axios.request({
-      url: "http://localhost:5000/api/canvas",
+      url: "https://canvas-backend-aditya.herokuapp.com/api/canvas/",
       method : "POST",
       data : {
           image_url : dataURL
@@ -64,7 +64,7 @@ export class Ui extends Component {
       console.log(res)
       if(res.data.success){
         var element = document.createElement('a'); 
-        element.setAttribute('href', `http://localhost:5000/${res.data.data}`)
+        element.setAttribute('href', `https://canvas-backend-aditya.herokuapp.com/${res.data.data}`)
 
         element.setAttribute('download', "canvas.pdf"); 
         
